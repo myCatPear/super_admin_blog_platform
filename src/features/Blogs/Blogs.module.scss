@@ -1,0 +1,38 @@
+@import "src/common/style/variables";
+.blogs {
+  &__wrapper {
+    padding: 29px 64px 29px 27px;
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 7px;
+  }
+  &__filter {
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  &__search {
+    width: 100%;
+    background: url("../../assets/img/search/Vector.svg") no-repeat scroll 10px;
+    padding:6px 0 6px 48px;
+    border: 2px solid $line_color;
+  }
+  &__sort {
+    min-width: 256px;
+    border: 2px solid $line_color;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: $text_primary_color;
+    background-color: $main_bgColor;
+    padding: 6px 12px;
+  }
+  &__blogsList {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+}

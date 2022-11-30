@@ -1,0 +1,1 @@
+export { PostSkeletonLoading } from './PostSkeletonLoading';

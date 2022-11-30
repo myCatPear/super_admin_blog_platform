@@ -1,0 +1,27 @@
+@import "src/common/style/variables";
+.blogCollapsed {
+  display: flex;
+  padding: 11px 0;
+  gap: 12px;
+  border-bottom: 1px solid $line_color;
+  &__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color:$text_primary_color;
+    text-decoration: none;
+  }
+  &__text {
+    margin-top: 50px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  &__description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    color:$blog_website_url;
+  }
+}

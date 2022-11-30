@@ -1,0 +1,33 @@
+@import "src/common/style/variables";
+.posts {
+  &__wrapper {
+    padding: 29px 64px 29px 27px;
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 7px;
+  }
+  &__filter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 24px 0;
+  }
+  &__sort {
+    min-width: 256px;
+    border: 2px solid $line_color;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: $text_primary_color;
+    background-color: $main_bgColor;
+    padding: 6px 12px;
+  }
+  &__postsList {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}

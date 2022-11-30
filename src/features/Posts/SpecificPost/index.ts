@@ -1,0 +1,1 @@
+export { SpecificPost } from './SpecificPost';

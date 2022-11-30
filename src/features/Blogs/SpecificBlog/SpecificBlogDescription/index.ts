@@ -1,0 +1,1 @@
+export { SpecificBlogDescription } from './SpecificBlogDescription';

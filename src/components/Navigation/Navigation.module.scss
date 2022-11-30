@@ -1,0 +1,49 @@
+@import "src/common/style/variables";
+
+.nav {
+  padding-top:43px;
+  padding-left: 64px;
+  background-color: $navigation_bgColor;
+  width: 252px;
+
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  &__item {
+    min-width: 185px;
+    display: flex;
+    position: relative;
+  }
+  &__link {
+    color:$text_primary_color;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    padding-left: 12px;
+  }
+  &__activeBorder {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 2px;
+    height: 100%;
+    background-color: $active_link_color;
+  }
+}
+
+.activeLink {
+  color:$active_link_color;
+}
+
+.svg {
+  fill:$text_primary_color;
+}
+
+.activeSVG {
+  fill: $active_link_color;
+}

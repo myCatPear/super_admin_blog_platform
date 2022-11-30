@@ -1,0 +1,62 @@
+@import "src/common/style/variables";
+.specificBlogDescription {
+  &__previewPicture {
+    width: 100%;
+    height: 312px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+  &__avatar {
+    flex-shrink: 0;
+    width: 144px;
+    height: 144px;
+  }
+  &__main {
+    display: flex;
+    gap: 16px;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 24px;
+    margin-bottom: 32px;
+  }
+  &__createdDate {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 3px;
+    color:$blog_creation_date_color;
+  }
+  &__url {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    color:$blog_website_url;
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  &__showMoreText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 23px;
+  }
+  &__button {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color:$blog_creation_date_color;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+  }
+}
