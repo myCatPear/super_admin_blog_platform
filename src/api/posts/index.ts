@@ -1,6 +1,7 @@
 import { apiConfig } from 'api/configAPI';
 import { ROUTE_TO_POSTS } from 'common/constants';
-import { IPostResponse, IResponse } from 'common/types/api';
+import { IResponse } from 'common/types/api/CommonApiTypes';
+import { IPostResponse } from 'common/types/api/Posts';
 
 export const postsAPI = {
   getAllPosts() {

@@ -2,7 +2,8 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import { postsAPI } from 'api/posts';
 import { setIsFetchPosts } from 'app/appSlice';
-import { IPostResponse, IResponse } from 'common/types/api';
+import { IResponse } from 'common/types/api/CommonApiTypes';
+import { IPostResponse } from 'common/types/api/Posts';
 import { fetchAllPostsForSpecificBlog } from 'features';
 
 const initialState: IResponse<IPostResponse[]> = {

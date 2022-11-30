@@ -10,14 +10,15 @@ import { useAppDispatch, useAppSelector } from 'app/hooks';
 import { ReactComponent as BackArrowSVG } from 'assets/img/blog/backArrow.svg';
 import { ReactComponent as TriangleSVG } from 'assets/img/blog/triangle.svg';
 import { ROUTE_TO_POSTS } from 'common/constants';
+import { getCurrentSpecificPost, getIsFetchPosts } from 'common/selectors';
 import commonStyle from 'common/style/CommonStyle.module.scss';
 import { PostSkeletonLoading } from 'components';
 
 export const SpecificPost: FC = () => {
   const { id } = useParams();
   const dispatch = useAppDispatch();
-  const currentSpecificPost = useAppSelector(state => state.specificPostReducer);
-  const isFetchSpecificPost = useAppSelector(state => state.appReducer.isFetchPosts);
+  const currentSpecificPost = useAppSelector(getCurrentSpecificPost);
+  const isFetchSpecificPost = useAppSelector(getIsFetchPosts);
 
   useEffect(() => {
     if (id) dispatch(fetchSpecificPost(id));

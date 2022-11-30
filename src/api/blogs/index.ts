@@ -1,6 +1,12 @@
-import { apiConfig } from 'api';
+import { apiConfig } from 'api/configAPI';
 import { ROUTE_TO_BLOGS, ROUTE_TO_POSTS } from 'common/constants';
-import { IBlogResponse, IPostResponse, IResponse } from 'common/types/api';
+import {
+  IBlogResponse,
+  IBlogCreateData,
+  IBlogCreateResponse,
+} from 'common/types/api/Blogs';
+import { IResponse } from 'common/types/api/CommonApiTypes';
+import { IPostResponse } from 'common/types/api/Posts';
 
 const defaultPageSize = 5;
 
@@ -19,5 +25,17 @@ export const blogsAPI = {
   },
   getSpecificBlog(id: string) {
     return apiConfig.get<IBlogResponse>(`${ROUTE_TO_BLOGS}/${id}`);
+  },
+  createBlog(data: IBlogCreateData) {
+    return apiConfig.post<IBlogCreateResponse>(
+      ROUTE_TO_BLOGS,
+      { ...data },
+      {
+        auth: {
+          username: 'admin',
+          password: 'qwerty',
+        },
+      },
+    );
   },
 };

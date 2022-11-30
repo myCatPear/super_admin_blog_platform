@@ -1,10 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-import { setIsFetchPosts } from '../../../app/appSlice';
-
 import { postsAPI } from 'api/posts';
+import { setIsFetchPosts } from 'app/appSlice';
 import { EMPTY_STRING } from 'common/constants';
-import { IPostResponse } from 'common/types/api';
+import { IPostResponse } from 'common/types/api/Posts';
 
 export const fetchSpecificPost = createAsyncThunk(
   'specificPost/fetchSpecificPost',

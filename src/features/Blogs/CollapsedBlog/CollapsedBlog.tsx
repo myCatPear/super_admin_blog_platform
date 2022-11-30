@@ -6,7 +6,7 @@ import style from './CollapsedBlog.module.scss';
 
 import { ReactComponent as BLOG_AVATAR_SVG } from 'assets/img/blog/blog.svg';
 import { ROUTE_TO_BLOGS } from 'common/constants';
-import { IBlogResponse } from 'common/types/api';
+import { IBlogResponse } from 'common/types/api/Blogs';
 
 export const CollapsedBlog: React.FC<IBlogResponse> = props => {
   const { name, id, websiteUrl, description } = props;

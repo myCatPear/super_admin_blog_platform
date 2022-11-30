@@ -1,5 +1,6 @@
 import { RootStateType } from 'app/store';
-import { IBlogResponse, IPostResponse } from 'common/types/api';
+import { IBlogResponse } from 'common/types/api/Blogs';
+import { IPostResponse } from 'common/types/api/Posts';
 
 export const getIsInitializedApp = (state: RootStateType): boolean =>
   state.appReducer.isInitializedApp;
@@ -18,3 +19,6 @@ export const getIsFetchPosts = (state: RootStateType): boolean =>
 
 export const getCurrentSpecificBlog = (state: RootStateType): IBlogResponse =>
   state.specificBlogReducer;
+
+export const getCurrentSpecificPost = (state: RootStateType): IPostResponse =>
+  state.specificPostReducer;

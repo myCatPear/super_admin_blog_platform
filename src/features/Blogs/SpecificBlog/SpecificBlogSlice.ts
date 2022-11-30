@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { blogsAPI } from 'api/blogs';
 import { setIsFetchBlogs } from 'app/appSlice';
 import { EMPTY_STRING } from 'common/constants';
-import { IBlogResponse } from 'common/types/api';
+import { IBlogResponse } from 'common/types/api/Blogs';
 
 export const fetchSpecificBlog = createAsyncThunk(
   'fetchSpecificBlog',

@@ -35,4 +35,10 @@
     display: flex;
     flex-direction: column;
   }
+  &__button {
+    margin-top: 23px;
+    margin-bottom: 29px;
+    display: flex;
+    justify-content: flex-end;
+  }
 }

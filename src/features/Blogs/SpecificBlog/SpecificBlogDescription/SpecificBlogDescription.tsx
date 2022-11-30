@@ -7,7 +7,7 @@ import { ReactComponent as ArrowUP } from 'assets/img/blog/arrowUp.svg';
 import { ReactComponent as ChooseAvatarSVG } from 'assets/img/blog/blog.svg';
 import { ReactComponent as ChoosePreviewPictureSVG } from 'assets/img/blog/photo_size_select_actual.svg';
 import commonStyle from 'common/style/CommonStyle.module.scss';
-import { IBlogResponse } from 'common/types/api';
+import { IBlogResponse } from 'common/types/api/Blogs';
 import { dateParse, cutString } from 'utils';
 
 interface ISpecificBlogDescription extends IBlogResponse {}
