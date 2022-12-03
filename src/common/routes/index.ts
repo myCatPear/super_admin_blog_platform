@@ -1,4 +1,5 @@
 import {
+  ROUTE_TO_ADD_BLOGS,
   ROUTE_TO_BLOGS,
   ROUTE_TO_NOT_EXISTING_PAGE,
   ROUTE_TO_POSTS,
@@ -6,7 +7,7 @@ import {
   ROUTE_TO_SPECIFIC_POSTS,
 } from 'common/constants';
 import { PageNotFound } from 'components';
-import { Blogs, Posts, SpecificBlog, SpecificPost } from 'features';
+import { AddBlog, Blogs, Posts, SpecificBlog, SpecificPost } from 'features';
 
 export const publicRoutes = [
   {
@@ -16,6 +17,10 @@ export const publicRoutes = [
   {
     path: ROUTE_TO_SPECIFIC_BLOGS,
     Component: SpecificBlog,
+  },
+  {
+    path: ROUTE_TO_ADD_BLOGS,
+    Component: AddBlog,
   },
   {
     path: ROUTE_TO_POSTS,

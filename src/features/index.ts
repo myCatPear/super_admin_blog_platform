@@ -1,4 +1,5 @@
 export { Blogs } from './Blogs';
+export { AddBlog } from './Blogs/AddBlog';
 export { blogsReducer } from './Blogs/blogsSlice';
 export { postsReducer } from './Posts/postsSlice';
 export { CollapsedBlog } from './Blogs/CollapsedBlog';

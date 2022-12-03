@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 
+import { useNavigate } from 'react-router-dom';
+
 import style from './Blogs.module.scss';
-import { createBlog, fetchBlogs } from './blogsSlice';
+import { fetchBlogs } from './blogsSlice';
 import { CollapsedBlog } from './CollapsedBlog';
 
 import { useAppDispatch, useAppSelector } from 'app/hooks';
+import { ROUTE_TO_ADD_BLOGS } from 'common/constants';
 import { getAllBlogs, getIsFetchBlogs } from 'common/selectors';
 import commonStyle from 'common/style/CommonStyle.module.scss';
 import { BlogSkeletonLoading } from 'components';
@@ -13,19 +16,13 @@ export const Blogs: React.FC = () => {
   const blogs = useAppSelector(getAllBlogs);
   const isFetchBlogs = useAppSelector(getIsFetchBlogs);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchBlogs());
   }, []);
 
-  const onButtonCreateBlogClick = (): any =>
-    dispatch(
-      createBlog({
-        name: 'Anya test blog',
-        description: 'Short Anya Description',
-        websiteUrl: 'www.anya.com',
-      }),
-    );
+  const onButtonCreateBlogClick = (): void => navigate(ROUTE_TO_ADD_BLOGS);
 
   return (
     <div className={style.blogs}>
