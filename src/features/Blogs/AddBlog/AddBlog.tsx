@@ -2,8 +2,6 @@ import React, { FC, useState } from 'react';
 
 import { NavLink } from 'react-router-dom';
 
-import { createBlog } from '../blogsSlice';
-
 import style from './AddBlog.module.scss';
 import { NewBlogDescription } from './NewBlogDescription/NewBlogDescription';
 
@@ -13,6 +11,7 @@ import { ReactComponent as AvatarSVG } from 'assets/img/blog/photo_size_select_a
 import { ReactComponent as TriangleSVG } from 'assets/img/blog/triangle.svg';
 import { EMPTY_STRING, ROUTE_TO_BLOGS } from 'common/constants';
 import commonStyle from 'common/style/CommonStyle.module.scss';
+import { createBlog } from 'features';
 
 export const AddBlog: FC = () => {
   const [newBLogName, setNewBlogName] = useState(EMPTY_STRING);

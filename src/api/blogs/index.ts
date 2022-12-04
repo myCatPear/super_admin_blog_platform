@@ -38,4 +38,12 @@ export const blogsAPI = {
       },
     );
   },
+  deleteBlog(blogID: string) {
+    return apiConfig.delete<{}>(`${ROUTE_TO_BLOGS}/${blogID}`, {
+      auth: {
+        username: 'admin',
+        password: 'qwerty',
+      },
+    });
+  },
 };

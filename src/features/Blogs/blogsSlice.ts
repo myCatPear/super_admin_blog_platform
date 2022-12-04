@@ -79,6 +79,21 @@ export const createBlog = createAsyncThunk<
   }
 });
 
+export const deleteBlog = createAsyncThunk(
+  'blogs/deleteBlog',
+  async (blogID: string, thunkAPI) => {
+    try {
+      thunkAPI.dispatch(setIsFetchBlogs({ value: true }));
+      await blogsAPI.deleteBlog(blogID);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      await thunkAPI.dispatch(fetchBlogs());
+      thunkAPI.dispatch(setIsFetchBlogs({ value: false }));
+    }
+  },
+);
+
 export const blogsSlice = createSlice({
   name: 'blogs',
   initialState,

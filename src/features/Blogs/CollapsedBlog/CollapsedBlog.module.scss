@@ -24,4 +24,16 @@
     margin-bottom: 12px;
     color:$blog_website_url;
   }
+  &__main {
+    width: 100%;
+  }
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  &__menuSVG {
+    cursor: pointer;
+  }
 }
