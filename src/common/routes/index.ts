@@ -1,7 +1,7 @@
 import {
   ROUTE_TO_ADD_BLOGS,
   ROUTE_TO_BLOGS,
-  ROUTE_TO_EDIT_BLOGS,
+  ROUTE_TO_EDIT_SPECIFIC_BLOG,
   ROUTE_TO_NOT_EXISTING_PAGE,
   ROUTE_TO_POSTS,
   ROUTE_TO_SPECIFIC_BLOGS,
@@ -24,7 +24,7 @@ export const publicRoutes = [
     Component: AddBlog,
   },
   {
-    path: ROUTE_TO_EDIT_BLOGS,
+    path: ROUTE_TO_EDIT_SPECIFIC_BLOG,
     Component: EditBlog,
   },
   {

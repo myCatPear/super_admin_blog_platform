@@ -1,39 +1,68 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
+
+import { BlogSkeletonLoading } from '../../../components';
+import { setEmptySpecificBlogState } from '../SpecificBlog/SpecificBlogSlice';
 
 import style from './EditBlog.module.scss';
+import { EditDescriptionBlog } from './EditDescriptionBlog';
 
+import { useAppDispatch, useAppSelector } from 'app/hooks';
 import { ReactComponent as BackArrowSVG } from 'assets/img/blog/backArrow.svg';
 import { ReactComponent as AvatarSVG } from 'assets/img/blog/photo_size_select_actual.svg';
 import { ReactComponent as TriangleSVG } from 'assets/img/blog/triangle.svg';
 import { ROUTE_TO_BLOGS } from 'common/constants';
+import { getCurrentSpecificBlog, getIsFetchBlogs } from 'common/selectors';
 import commonStyle from 'common/style/CommonStyle.module.scss';
+import { fetchSpecificBlog } from 'features';
 
 export const EditBlog: FC = () => {
+  const { blogID } = useParams();
+  const dispatch = useAppDispatch();
+  const isFetchSpecificBlog = useAppSelector(getIsFetchBlogs);
+  const currentBlog = useAppSelector(getCurrentSpecificBlog);
+
+  useEffect(() => {
+    if (blogID) dispatch(fetchSpecificBlog(blogID));
+
+    return () => {
+      dispatch(setEmptySpecificBlogState());
+    };
+  }, []);
+
   return (
-    <div className={style.addBlog}>
-      <div className={style.addBlog__wrapper}>
-        <div className={style.header}>
-          <h2 className={style.addBlog__title}>Blogs</h2>
-          <TriangleSVG />
-          <span className={style.header__action}>Add</span>
-        </div>
-        <hr className={commonStyle.line} />
-        <div className={style.addBlog__backToBlogs}>
-          <BackArrowSVG />
-          <NavLink to={ROUTE_TO_BLOGS} className={style.addBlog__backToBlogsLink}>
-            Back to blogs
-          </NavLink>
-        </div>
-        <div className={style.addBlog__img}>
-          <AvatarSVG className={style.addBlog__avatar} />
-        </div>
-        <div className={style.addBlog__button}>
-          <button type="button" className={commonStyle.button}>
-            Add blog
-          </button>
-        </div>
+    <div className={style.editBlog}>
+      <div className={style.editBlog__wrapper}>
+        {isFetchSpecificBlog ? (
+          <BlogSkeletonLoading />
+        ) : (
+          <>
+            <div className={style.header}>
+              <h2 className={style.editBlog__title}>Blogs</h2>
+              <TriangleSVG />
+              <span className={style.header__action}>{currentBlog.name}</span>
+              <TriangleSVG />
+              <span className={style.header__action}>Edit</span>
+            </div>
+            <hr className={commonStyle.line} />
+            <div className={style.editBlog__backToBlogs}>
+              <BackArrowSVG />
+              <NavLink to={ROUTE_TO_BLOGS} className={style.editBlog__backToBlogsLink}>
+                Back to blogs
+              </NavLink>
+            </div>
+            <div className={style.editBlog__img}>
+              <AvatarSVG className={style.editBlog__avatar} />
+            </div>
+            <EditDescriptionBlog />
+            <div className={style.editBlog__button}>
+              <button type="button" className={commonStyle.button}>
+                Edit blog
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
