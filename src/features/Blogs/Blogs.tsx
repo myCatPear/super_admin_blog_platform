@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import style from './Blogs.module.scss';
 import { fetchBlogs } from './blogsSlice';
 import { CollapsedBlog } from './CollapsedBlog';
+import { setEmptySpecificBlogState } from './SpecificBlog/SpecificBlogSlice';
 
 import { useAppDispatch, useAppSelector } from 'app/hooks';
 import { ROUTE_TO_ADD_BLOGS } from 'common/constants';
@@ -20,6 +21,7 @@ export const Blogs: React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchBlogs());
+    dispatch(setEmptySpecificBlogState());
   }, []);
 
   const onButtonCreateBlogClick = (): void => navigate(ROUTE_TO_ADD_BLOGS);

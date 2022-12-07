@@ -2,9 +2,6 @@ import React, { FC, useEffect } from 'react';
 
 import { NavLink, useParams } from 'react-router-dom';
 
-import { BlogSkeletonLoading } from '../../../components';
-import { setEmptySpecificBlogState } from '../SpecificBlog/SpecificBlogSlice';
-
 import style from './EditBlog.module.scss';
 import { EditDescriptionBlog } from './EditDescriptionBlog';
 
@@ -15,6 +12,7 @@ import { ReactComponent as TriangleSVG } from 'assets/img/blog/triangle.svg';
 import { ROUTE_TO_BLOGS } from 'common/constants';
 import { getCurrentSpecificBlog, getIsFetchBlogs } from 'common/selectors';
 import commonStyle from 'common/style/CommonStyle.module.scss';
+import { BlogSkeletonLoading } from 'components';
 import { fetchSpecificBlog } from 'features';
 
 export const EditBlog: FC = () => {
@@ -22,13 +20,16 @@ export const EditBlog: FC = () => {
   const dispatch = useAppDispatch();
   const isFetchSpecificBlog = useAppSelector(getIsFetchBlogs);
   const currentBlog = useAppSelector(getCurrentSpecificBlog);
+  // const [currentBlogName, setCurrentBlogName] = useState(currentBlog.name);
+  // const [currentBlogWebsiteUrl, setCurrentBlogWebsiteUrl] = useState(
+  //   currentBlog.websiteUrl,
+  // );
+  // const [currentBlogDescription, setCurrentBlogDescription] = useState(
+  //   currentBlog.description,
+  // );
 
   useEffect(() => {
     if (blogID) dispatch(fetchSpecificBlog(blogID));
-
-    return () => {
-      dispatch(setEmptySpecificBlogState());
-    };
   }, []);
 
   return (

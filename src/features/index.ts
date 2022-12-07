@@ -6,6 +6,7 @@ export { CollapsedBlog } from './Blogs/CollapsedBlog';
 export { SpecificBlog } from './Blogs/SpecificBlog';
 export { specificBlogReducer } from './Blogs/SpecificBlog';
 export { fetchSpecificBlog } from './Blogs/SpecificBlog/SpecificBlogSlice';
+export { setEmptySpecificBlogState } from './Blogs/SpecificBlog/SpecificBlogSlice';
 
 export { blogsReducer } from './Blogs/blogsSlice';
 export { fetchAllPostsForSpecificBlog } from './Blogs/blogsSlice';
